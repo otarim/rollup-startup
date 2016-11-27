@@ -10,7 +10,7 @@
     "livereload": "livereload dist/,index.html"
   },
   "author": "otarim.com@gmail.com",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "babel-preset-es2015-rollup": "^1.2.0",
     "less-plugin-autoprefix": "^1.5.1",
