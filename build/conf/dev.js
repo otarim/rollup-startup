@@ -5,7 +5,7 @@ const commonjs = require('rollup-plugin-commonjs')
 const less = require('rollup-plugin-less')
 const url = require('rollup-plugin-url')
 const watch = require('node-watch')
-const livereload = require('livereload')
+const liveServer = require("live-server")
 const LessAutoprefix = require('less-plugin-autoprefix')
 const string = require('rollup-plugin-string')
 const htmlPlugIn = require('../plugins/html')
@@ -25,11 +25,7 @@ const urlPlugIn = url({
 const outputOpt = {
     dest: path.resolve(OUTPUTPATH, 'main.js'),
     format: 'iife',
-    sourceMap: 'inline',
-    footer: `document.write(
-        '<script src="http://' + (location.host || 'localhost').split(':')[0] +
-        ':35729/livereload.js?snipver=1"></' + 'script>'
-    );`
+    sourceMap: 'inline'
 }
 const PublicOpt = {
     dest: `${OUTPUTPATH}/??`
@@ -80,8 +76,7 @@ var build = function() {
 
 util.mkdirSync(OUTPUTPATH)
 
-const server = livereload.createServer()
-server.watch(vars.output)
+liveServer.start(vars.liveServer);
 watch(vars.src, function(filename) {
     console.log(`${filename} changed, Watching for changes...`)
     build()

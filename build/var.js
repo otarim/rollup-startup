@@ -1,5 +1,5 @@
 const path = require('path')
-module.exports = {
+var vars = {
     publicPath: 'assets/',
     output: path.resolve(__dirname, '../public'),
     src: path.resolve(__dirname, '../src'),
@@ -8,3 +8,12 @@ module.exports = {
         output: path.resolve(__dirname, '../public/index.html')
     }
 }
+
+vars.liveServer = {
+    port: 8181,
+    root: vars.output,
+    open: true,
+    wait: 1000
+}
+
+module.exports = vars

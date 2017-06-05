@@ -14,7 +14,7 @@
     "ejs": "^2.5.6",
     "html-minifier": "^3.5.2",
     "less-plugin-autoprefix": "^1.5.1",
-    "livereload": "^0.6.0",
+    "live-server": "^1.2.0",
     "node-watch": "^0.4.1",
     "rollup": "^0.42.0",
     "rollup-plugin-babel": "^2.7.1",
