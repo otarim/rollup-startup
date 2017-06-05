@@ -2,10 +2,10 @@ const rollup = require('rollup').rollup
 const babel = require('rollup-plugin-babel')
 const resolve = require('rollup-plugin-node-resolve')
 const commonjs = require('rollup-plugin-commonjs')
-const replace = require('rollup-plugin-replace')
 const less = require('rollup-plugin-less')
 const url = require('rollup-plugin-url')
 const watch = require('node-watch')
+const livereload = require('livereload')
 const LessAutoprefix = require('less-plugin-autoprefix')
 const string = require('rollup-plugin-string')
 const htmlPlugIn = require('../plugins/html')
@@ -78,10 +78,13 @@ var build = function() {
     })
 }
 
+util.mkdirSync(OUTPUTPATH)
+
+const server = livereload.createServer()
+server.watch(vars.output)
 watch(vars.src, function(filename) {
     console.log(`${filename} changed, Watching for changes...`)
     build()
 })
 
-util.mkdirSync(OUTPUTPATH)
 build()

@@ -4,10 +4,8 @@
   "description": "a web startup base on rollup.js",
   "main": "rollup.build.js",
   "scripts": {
-    "watch": "NODE_ENV=development node build/conf/dev.js",
-    "dev": "NODE_ENV=development npm-run-all --parallel livereload watch",
-    "build": "NODE_ENV=production node build/conf/prod.js",
-    "livereload": "livereload dist/,index.html"
+    "dev": "NODE_ENV=development node build/conf/dev.js",
+    "build": "NODE_ENV=production node build/conf/prod.js"
   },
   "author": "otarim.com@gmail.com",
   "license": "MIT",
@@ -18,14 +16,12 @@
     "less-plugin-autoprefix": "^1.5.1",
     "livereload": "^0.6.0",
     "node-watch": "^0.4.1",
-    "npm-run-all": "^3.1.1",
     "rollup": "^0.42.0",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^5.0.5",
     "rollup-plugin-less": "0.0.9",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-postcss": "^0.2.0",
-    "rollup-plugin-replace": "^1.1.1",
     "rollup-plugin-string": "^2.0.2",
     "rollup-plugin-uglify": "^1.0.1",
     "rollup-plugin-url": "^0.1.2"
